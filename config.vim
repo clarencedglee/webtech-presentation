@@ -19,3 +19,4 @@ inoremap <c-b> <esc>:call emmet#expandAbbr(3, '')<CR>
 
 set complete+=k./completion.vim
 set iskeyword+=-
+autocmd FileType html set omnifunc=csscomplete#CompleteCSS
