@@ -5,13 +5,17 @@ let s:acronyms = {
       \'CSS': 'Cascading Style Sheets',
       \}
 
-function! w#expand()
+function! config#expand()
   let l:acro = expand('<cword>')
   let l:expanded = get(s:acronyms, l:acro)
   if !empty(l:expanded)
-    execute "normal! e?".l:acro."\<CR>i".l:expanded."\<ESC>ldw"
+    execute "normal! ciw".l:expanded."\<ESC>"
   endif
+	echo 'yes'
 endfunction
 
-noremap <c-c> <esc>:call w#expand()<CR>
+noremap <c-c> <esc>:call config#expand()<CR>
 inoremap <c-b> <esc>:call emmet#expandAbbr(3, '')<CR>
+
+set complete+=k./completion.vim
+set iskeyword+=-
