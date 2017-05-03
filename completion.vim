@@ -4,3 +4,10 @@ aria-label
 role
 main
 style
+dubishere
+media
+srcset
+min-width
+max-width
+source
+picture
