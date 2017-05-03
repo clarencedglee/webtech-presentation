@@ -3,9 +3,10 @@ let insert = require('gulp-insert')
 let markdown = require('gulp-markdown')
 let livereload = require('gulp-livereload')
 let fs = require('fs')
+let livereloadPort = 9124
 
 gulp.task('default', ['simple'], () => {
-  livereload.listen({port: 9123})
+  livereload.listen({port: livereloadPort})
   gulp.watch(['./index.html', './style.css', './script.js', './defaults/*.*'], ['simple'])
 })
 
@@ -17,8 +18,8 @@ gulp.task('simple', () => {
         return contents.replace(/\b([-.\w]+)\.j\b/gm, '<img src="$1.jpg" />')
       }))
       .pipe(markdown())
-      .pipe(insert.append(`<style>${style}</style>`))
-      .pipe(insert.append(`<script src="http://localhost:9123/livereload.js?snipver=1"></script>`))
+      //.pipe(insert.append(`<style>${style}</style>`))
+      .pipe(insert.append(`<script src="http://localhost:${livereloadPort}/livereload.js?snipver=1"></script>`))
       .pipe(insert.append(`<script>${script}</script>`))
       .pipe(gulp.dest('./out'))
       .pipe(livereload())
