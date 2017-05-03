@@ -7,7 +7,7 @@ let livereloadPort = 9124
 
 gulp.task('default', ['simple'], () => {
   livereload.listen({port: livereloadPort})
-  gulp.watch(['./index.html', './style.css', './script.js', './defaults/*.*'], ['simple'])
+  gulp.watch(['./index.html', './style.css', './script.js', './defaults/*.*', './out/dev.css'], ['simple'])
 })
 
 gulp.task('simple', () => {
@@ -15,7 +15,10 @@ gulp.task('simple', () => {
   let script = fs.readFileSync('script.js', 'utf8')
   gulp.src('./index.html')
       .pipe(insert.transform((contents, file) => {
-        return contents.replace(/\b([-.\w]+)\.j\b/gm, '<img src="$1.jpg" />')
+        return contents.replace(/\b([-.\w]+)\.j\b/gm, '<img src="$1.jpg" width="100%"/>')
+      }))
+      .pipe(insert.transform((contents, file) => {
+        return contents.replace('styleme', `<style>${style}</style>`)
       }))
       .pipe(markdown())
       //.pipe(insert.append(`<style>${style}</style>`))
