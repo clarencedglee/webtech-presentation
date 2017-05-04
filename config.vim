@@ -21,7 +21,7 @@ inoremap <c-b> <esc>:call emmet#expandAbbr(3, '')<CR>
 set complete+=k./completion.vim
 set iskeyword+=-
 autocmd FileType html set omnifunc=csscomplete#CompleteCSS
-abbr anch <a id="anchor">AHOY LAND-LOVERS!</a>
+abbr anc <a id="end">SIGNED IN BLOOD:_________________</a>
 let @l="I<li>\<esc>A</li>\<esc>"
 hi LineNr ctermfg=241
 hi Visual ctermfg=yellow ctermbg=black
