@@ -1,17 +1,9 @@
-$size: 2px;
+$bounceHeight: 50px;
+$numBounces: 5;
+$distX: 100%;
 
-div {
-	position: relative;
-	margin-top: 100px;
-}
-
-div:after {
-	content: '';
-	display: block;
-	border: 1px solid blue;
-	width: $size;
-	height: $size;
-	position: relative;
+h1:after {
+  top: 100px;
 	animation:
 		vert 3s linear infinite,
 		horz 3s linear infinite,
@@ -19,12 +11,49 @@ div:after {
 }
 
 @keyframes vert {
-	0%, 100%  { top: 0; }
-	50%  			{ top: -100px; }
+  @for $i from 1 through $numBounces {
+    $segment: 100/$numBounces;
+    $a: ($i - 1) * $segment;
+    $b: ($i * $segment) - ($segment / 2);
+    $c: $i * $segment;
+    #{$a}% { transform: translateY(0);  animation-timing-function: cubic-bezier(0.0, 0.1, 0.3, 1.0); }
+    #{$b}% { transform: translateY(-$bounceHeight) scaleY(1); animation-timing-function: cubic-bezier(0.3, 0.0, 0.8, 0.5); }
+  }
+  100% {transform: translateY(0)}
 }
 
 @keyframes horz {
-	0%   { left: 0; 		animation-timing-function: cubic-bezier(); }
-	50%  { left: 100px; animation-timing-function: cubic-bezier(0.300, 0.950, 0.685, 1.000); }
-	100% { left: 200px;}
+	0%   { left: 0; }
+	50%  { left: $distX/2; }
+	100% { left: $distX; }
+}
+
+@keyframes text {
+	0%   { left: 0; }
+	50%  { left: $distX/2; }
+	100% { left: $distX; }
+}
+
+$numKaraokeLines: 5;
+$fadeSpeed: 5;
+@for $i from 1 through $numKaraokeLines {
+  $animation-name: karaoke#{$i};
+  h1 p:nth-child(#{$i}) {
+    animation: #{$animation-name} 15s linear infinite;
+  };
+  @keyframes #{$animation-name} {
+    $segment: 100/$numKaraokeLines;
+    $ii: ($i - 1);
+    $a: $ii * $segment;
+    $b: ($ii * $segment)+$fadeSpeed;
+    $c: $i * $segment;
+    $d: ($i * $segment)+$fadeSpeed;
+    $e: 0;
+    0% { op: 0 }
+    #{$a}% {opacity: 0}
+    #{$b}% {opacity: 1}
+    #{$c}% {opacity: 1}
+    #{$d}% {opacity: 0}
+    100% {opacity: 0}
+  }
 }

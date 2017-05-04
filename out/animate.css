@@ -1,0 +1,138 @@
+h1:after {
+  top: 100px;
+  animation: vert 3s linear infinite, horz 3s linear infinite; }
+
+@keyframes vert {
+  0% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0.1, 0.3, 1); }
+  10% {
+    transform: translateY(-50px) scaleY(1);
+    animation-timing-function: cubic-bezier(0.3, 0, 0.8, 0.5); }
+  20% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0.1, 0.3, 1); }
+  30% {
+    transform: translateY(-50px) scaleY(1);
+    animation-timing-function: cubic-bezier(0.3, 0, 0.8, 0.5); }
+  40% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0.1, 0.3, 1); }
+  50% {
+    transform: translateY(-50px) scaleY(1);
+    animation-timing-function: cubic-bezier(0.3, 0, 0.8, 0.5); }
+  60% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0.1, 0.3, 1); }
+  70% {
+    transform: translateY(-50px) scaleY(1);
+    animation-timing-function: cubic-bezier(0.3, 0, 0.8, 0.5); }
+  80% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0.1, 0.3, 1); }
+  90% {
+    transform: translateY(-50px) scaleY(1);
+    animation-timing-function: cubic-bezier(0.3, 0, 0.8, 0.5); }
+  100% {
+    transform: translateY(0); } }
+
+@keyframes horz {
+  0% {
+    left: 0; }
+  50% {
+    left: 50%; }
+  100% {
+    left: 100%; } }
+
+@keyframes text {
+  0% {
+    left: 0; }
+  50% {
+    left: 50%; }
+  100% {
+    left: 100%; } }
+
+h1 p:nth-child(1) {
+  animation: karaoke1 15s linear infinite; }
+
+@keyframes karaoke1 {
+  0% {
+    op: 0; }
+  0% {
+    opacity: 0; }
+  5% {
+    opacity: 1; }
+  20% {
+    opacity: 1; }
+  25% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+h1 p:nth-child(2) {
+  animation: karaoke2 15s linear infinite; }
+
+@keyframes karaoke2 {
+  0% {
+    op: 0; }
+  20% {
+    opacity: 0; }
+  25% {
+    opacity: 1; }
+  40% {
+    opacity: 1; }
+  45% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+h1 p:nth-child(3) {
+  animation: karaoke3 15s linear infinite; }
+
+@keyframes karaoke3 {
+  0% {
+    op: 0; }
+  40% {
+    opacity: 0; }
+  45% {
+    opacity: 1; }
+  60% {
+    opacity: 1; }
+  65% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+h1 p:nth-child(4) {
+  animation: karaoke4 15s linear infinite; }
+
+@keyframes karaoke4 {
+  0% {
+    op: 0; }
+  60% {
+    opacity: 0; }
+  65% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  85% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+
+h1 p:nth-child(5) {
+  animation: karaoke5 15s linear infinite; }
+
+@keyframes karaoke5 {
+  0% {
+    op: 0; }
+  80% {
+    opacity: 0; }
+  85% {
+    opacity: 1; }
+  100% {
+    opacity: 1; }
+  105% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
