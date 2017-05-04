@@ -1,0 +1,30 @@
+$size: 2px;
+
+div {
+	position: relative;
+	margin-top: 100px;
+}
+
+div:after {
+	content: '';
+	display: block;
+	border: 1px solid blue;
+	width: $size;
+	height: $size;
+	position: relative;
+	animation:
+		vert 3s linear infinite,
+		horz 3s linear infinite,
+		;
+}
+
+@keyframes vert {
+	0%, 100%  { top: 0; }
+	50%  			{ top: -100px; }
+}
+
+@keyframes horz {
+	0%   { left: 0; 		animation-timing-function: cubic-bezier(); }
+	50%  { left: 100px; animation-timing-function: cubic-bezier(0.300, 0.950, 0.685, 1.000); }
+	100% { left: 200px;}
+}
