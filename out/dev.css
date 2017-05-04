@@ -15,7 +15,9 @@ h1 {
 	background-size: cover;
 	background-repeat: no-repeat;
 	text-align: center;
-	display: relative
+	display: relative;
+	max-height: 300px;
+	overflow: hidden;
 }
 
 h1:before {
@@ -116,4 +118,20 @@ ul:not([role]) li:nth-child(2):before {
 
 div[role]{
 	margin: 0 50px;
+}
+
+@media (max-width:380px) {
+	h1 {
+		font-size: 16px;
+		max-height: 200px;
+		line-height: 200px;
+	}
+
+	h1:after {
+		top: 120px;
+	}
+
+	ul[role] {
+		top: 170px;
+	}
 }
