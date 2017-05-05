@@ -16,7 +16,7 @@ h1 {
 	background-repeat: no-repeat;
 	text-align: center;
 	position: relative;
-	height: 300px;
+	height: 330px;
 	overflow: hidden;
 }
 
@@ -25,11 +25,14 @@ h1:before {
 	content: 'dev';
 	letter-spacing: -7px;
 	position: absolute;
-	top: 14px;
-	left: 20px;
 	font-weight: 500;
 	line-height: 40px;
 	font-size: 40px;
+	top: 0;
+	left: 0;
+	padding-top: 14px;
+	padding-left: 20px;
+	box-sizing: border-box;
 }
 
 h1:after {
@@ -43,7 +46,7 @@ h1:after {
 	background: url(izzy.jpg);
 	background-size: cover;
 	background-position: center;
-	z-index: 9;
+	z-index: 99999;
 }
 
 h1 p {
@@ -88,14 +91,16 @@ ul[role] li a {
 }
 
 ul {
+	box-sizing: border-box;
 	display: flex;
 	padding: 0;
-	width: 350px;
-	margin: 60px auto 50;
+	width: 100%;
+	margin: 80px auto 50;
+	padding: 0 100px;
 }
 
 ul:not([role]) li {
-	flex: 1 1 auto;
+	flex: 1 1 100%;
 	display: inline-block;
 	min-width: 100px;
 	height: 50px;

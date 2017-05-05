@@ -4,6 +4,7 @@ let s:acronyms = {
       \'HT': 'Hyper Text ',
       \'CSS': 'Cascading Style Sheets',
       \'http': 'Hyper Text Transfer Protocol',
+      \'href': 'Hyper Text Reference',
       \}
 
 function! config#expand()
@@ -30,8 +31,8 @@ hi LineNr ctermfg=241
 hi Visual ctermfg=yellow ctermbg=black
 
 abbr fresh 
-      \<p>Now this is a story all about how</p>
-      \<p>My life got flipped-turned upside down</p>
-      \<p>And I'd like to take a minute</p>
-      \<p>Just sit right there</p>
-      \<p>I'll tell you how I became the prince of a town called Bel-Air</p>
+      \<p>Now this is a story all about how</p><CR>
+      \<p>My life got flipped-turned upside down</p><CR>
+      \<p>And I'd like to take a minute</p><CR>
+      \<p>Just sit right there I'll tell you how I became</p><CR>
+			\<p>the prince of a town called Bel-Air</p>

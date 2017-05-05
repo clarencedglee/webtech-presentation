@@ -11,3 +11,5 @@ min-width
 max-width
 source
 picture
+proof
+anchor

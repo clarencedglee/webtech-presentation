@@ -1,12 +1,23 @@
 $bounceHeight: 50px;
 $numBounces: 5;
 $distX: 100%;
+$delay: 3s;
+
+h1:before {
+	width: 100%;
+	height: 330px;
+	background-image:url('fresh-prince.jpg');
+	background-size: cover;
+	background-position: top;
+	text-align: left;
+	animation: karaoke-drop 1s;
+}
 
 h1:after {
-  top: 100px;
+  top: 115px;
 	animation:
-		vert 3s linear infinite,
-		horz 3s linear infinite,
+		vert 3s $delay linear infinite,
+		horz 3s $delay linear infinite,
 		;
 }
 
@@ -35,11 +46,24 @@ h1:after {
 }
 
 $numKaraokeLines: 5;
-$fadeSpeed: 5;
+$fadeSpeed: 1;
+
+@keyframes karaoke-in {
+	0%   { opacity: 0 }
+	75%  { opacity: 0 }
+	100% { opacity: 1 }
+}
+
 @for $i from 1 through $numKaraokeLines {
   $animation-name: karaoke#{$i};
+	$enter: karaoke-in $delay linear;
+	$loop: #{$animation-name} 15s $delay linear infinite;
   h1 p:nth-child(#{$i}) {
-    animation: #{$animation-name} 15s linear infinite;
+		@if ($i == 1) {
+			animation: $enter, $loop;
+		} @else {
+			animation: $loop;
+		}
   };
   @keyframes #{$animation-name} {
     $segment: 100/$numKaraokeLines;
@@ -56,4 +80,9 @@ $fadeSpeed: 5;
     #{$d}% {opacity: 0}
     100% {opacity: 0}
   }
+}
+
+@keyframes karaoke-drop {
+	0% { transform: rotate(90deg) scale(0);}
+	100% { transform: rotate(0deg) scale(1);}
 }

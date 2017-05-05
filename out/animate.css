@@ -1,6 +1,15 @@
+h1:before {
+  width: 100%;
+  height: 330px;
+  background-image: url("fresh-prince.jpg");
+  background-size: cover;
+  background-position: top;
+  text-align: left;
+  animation: karaoke-drop 1s; }
+
 h1:after {
-  top: 100px;
-  animation: vert 3s linear infinite, horz 3s linear infinite; }
+  top: 115px;
+  animation: vert 3s 3s linear infinite, horz 3s 3s linear infinite; }
 
 @keyframes vert {
   0% {
@@ -52,87 +61,101 @@ h1:after {
   100% {
     left: 100%; } }
 
+@keyframes karaoke-in {
+  0% {
+    opacity: 0; }
+  75% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 h1 p:nth-child(1) {
-  animation: karaoke1 15s linear infinite; }
+  animation: karaoke-in 3s linear, karaoke1 15s 3s linear infinite; }
 
 @keyframes karaoke1 {
   0% {
     op: 0; }
   0% {
     opacity: 0; }
-  5% {
+  1% {
     opacity: 1; }
   20% {
     opacity: 1; }
-  25% {
+  21% {
     opacity: 0; }
   100% {
     opacity: 0; } }
 
 h1 p:nth-child(2) {
-  animation: karaoke2 15s linear infinite; }
+  animation: karaoke2 15s 3s linear infinite; }
 
 @keyframes karaoke2 {
   0% {
     op: 0; }
   20% {
     opacity: 0; }
-  25% {
+  21% {
     opacity: 1; }
   40% {
     opacity: 1; }
-  45% {
+  41% {
     opacity: 0; }
   100% {
     opacity: 0; } }
 
 h1 p:nth-child(3) {
-  animation: karaoke3 15s linear infinite; }
+  animation: karaoke3 15s 3s linear infinite; }
 
 @keyframes karaoke3 {
   0% {
     op: 0; }
   40% {
     opacity: 0; }
-  45% {
+  41% {
     opacity: 1; }
   60% {
     opacity: 1; }
-  65% {
+  61% {
     opacity: 0; }
   100% {
     opacity: 0; } }
 
 h1 p:nth-child(4) {
-  animation: karaoke4 15s linear infinite; }
+  animation: karaoke4 15s 3s linear infinite; }
 
 @keyframes karaoke4 {
   0% {
     op: 0; }
   60% {
     opacity: 0; }
-  65% {
+  61% {
     opacity: 1; }
   80% {
     opacity: 1; }
-  85% {
+  81% {
     opacity: 0; }
   100% {
     opacity: 0; } }
 
 h1 p:nth-child(5) {
-  animation: karaoke5 15s linear infinite; }
+  animation: karaoke5 15s 3s linear infinite; }
 
 @keyframes karaoke5 {
   0% {
     op: 0; }
   80% {
     opacity: 0; }
-  85% {
+  81% {
     opacity: 1; }
   100% {
     opacity: 1; }
-  105% {
+  101% {
     opacity: 0; }
   100% {
     opacity: 0; } }
+
+@keyframes karaoke-drop {
+  0% {
+    transform: rotate(90deg) scale(0); }
+  100% {
+    transform: rotate(0deg) scale(1); } }
